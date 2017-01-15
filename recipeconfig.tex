@@ -1,0 +1,45 @@
+\newcounter{stepcnt}
+
+\newcommand{\preptime}[1]{\Interval\ #1\\[0.2cm]}
+\newcommand{\person}[1]{\\\underline{\textit{Zutaten für #1 Person:}}\\[0.2cm]}
+\newcommand{\persons}[1]{\\\underline{\textit{Zutaten für #1 Personen:}}\\[0.2cm]}
+\newcommand{\portions}[1]{\\\underline{\textit{Zutaten für #1 Portionen:}}\\[0.2cm]}
+\newcommand{\ingredientsec}[1]{\\\textbf{\textit{#1:}}\\[0.2cm]}
+\newcommand{\ingredient}[1]{#1\\[0.2cm]}
+
+\newcommand{\hour}{Stunde\xspace}
+\newcommand{\hours}{Stunden\xspace}
+\newcommand{\minute}{Minute\xspace}
+\newcommand{\minutes}{Minuten\xspace}
+\newcommand{\degree}{Grad\xspace}
+\newcommand{\gramm}{$g$\xspace}
+\newcommand{\liter}{$l$\xspace}
+\newcommand{\cremefraiche}{Cr\`{e}me fra\^{i}che\xspace}
+
+\newcommand{\recipe}[4]{
+\newpage
+\setcounter{stepcnt}{1}
+\begin{tabularx}{\textwidth}{m{0.35\textwidth}m{0.65\textwidth}}
+&\\
+\centering
+\includegraphics[width=0.3\textwidth]{#2}
+&\section{#1}\\
+\end{tabularx}
+%
+\vspace{0.5cm}
+\rule{\textwidth}{1pt}
+\vspace{0.5cm}
+%
+\begin{minipage}[t]{0.35\textwidth}
+#3
+\end{minipage}
+%
+\begin{minipage}[t]{0.65\textwidth}
+\underline{\textit{Zubereitung:}}
+\begin{list}{\textbf{\color{red}{\Large{\arabic{stepcnt}}}}}{\usecounter{stepcnt}\it}
+#4
+\end{list}
+\end{minipage}
+}
+
+

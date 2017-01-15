@@ -1,0 +1,123 @@
+\documentclass[a4paper,11pt,twoside]{report}
+
+% include packages
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\graphicspath{{./Abbildungen/}}
+\usepackage{color}
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage[clock]{ifsym}% Symbolpackage zB \Interval, \Wecker etc
+\usepackage{comment}
+\usepackage{minitoc}
+\renewcommand{\mtctitle}{}
+\nomtcrule
+
+% configure layout
+\input{layoutconfig.tex}
+
+% configure recipe environment
+\input{recipeconfig.tex}
+
+\usepackage[ % muss letztes Package sein!
+	pdftitle={Mutti's Kochbuch},%
+	pdfauthor={Hannelore Reinhart},%
+	pdfsubject={Kochbuch},%
+	pdfcreator={PDFLaTeX},
+	pdfproducer={LaTeX mit Ubuntu},
+	colorlinks=false, pdfborder={0 0 0}
+]{hyperref} % 
+
+\begin{document}
+\dominitoc
+
+% title page
+\begin{titlepage}
+\pagecolor{yellow} % auskommentieren für weissen Hintergrund
+%\author{\copyright \ 2011 Hannelore Reinhart\\Layout: Felix Reinhart}
+%\date{\today}
+\title{\vspace{-4cm}
+\Huge{\textbf{Mutti's Kochbuch}}
+%\\\phantom{\includegraphics[width=15cm,angle=-90]{loeffel1}}
+\begin{picture}(0.5,0.6)
+\put(0.195,0.5){\includegraphics[width=20cm,angle=-90]{loeffel1}}
+\put(0.163,0.32){\includegraphics[height=6.5cm]{Mutti-head}}
+\put(0,0.5){\includegraphics[width=20cm,angle=-90]{loeffel2}}
+\put(0.39,0.5){\includegraphics[width=20cm,angle=-90]{loeffel3}}
+\end{picture}
+}
+\author{}
+\date{}
+\end{titlepage}
+\maketitle
+\pagecolor{white}
+\pagestyle{empty}
+%\cleardoublepage
+\newpage
+
+% copyright page
+\begin{minipage}[b!]{\textwidth}
+\begin{flushleft}
+\flushbottom \copyright \ 2011 Hannelore Reinhart\\
+Layout: Felix Reinhart\\
+Datum: \date{\today}
+\end{flushleft}
+\end{minipage}
+
+% table of contents
+\setcounter{page}{1}
+\tableofcontents
+\pagestyle{fancy}
+\cleardoublepage
+
+%%%%%%%%%% Content %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Suppen und Salate}
+\minitoc
+\input{Rezepte/Griesskloesschensuppe.tex}
+\input{Rezepte/BunterSalat.tex}
+\input{Rezepte/TomatenMozzarella.tex}
+
+%\newpage
+\chapter{Hauptgerichte}
+\minitoc
+\input{Rezepte/WeisserSpargel.tex}
+\input{Rezepte/PfannkuchenMitSpinat.tex}
+\input{Rezepte/PikanterLauchkuchen.tex}
+\input{Rezepte/Blumenkohl-Nudel-Auflauf.tex}
+\input{Rezepte/SpinatLachsLasagne.tex}
+\input{Rezepte/ForelleAlufolie.tex}
+\input{Rezepte/SauerkrautFloenzKartoffelpueree.tex}
+
+%\newpage
+\chapter{Desserts und Süßspeisen}
+\minitoc
+\input{Rezepte/Tiramisu.tex}
+\input{Rezepte/Kaiserschmarrn.tex}
+\input{Rezepte/GriessbreiObst.tex}
+\input{Rezepte/Schneetorte.tex}
+\input{Rezepte/Schokoladenkuchen.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% finish
+\cleardoublepage
+\pagestyle{empty}
+\cleardoublepage
+\newpage
+\phantom{blub}
+\newpage
+\pagecolor{yellow} % auskommentieren für weissen Hintergrund
+
+% rear page
+\begin{center}
+\begin{picture}(0,0)
+\put(-0.07,-0.07){\includegraphics[width=20cm,angle=-110]{loeffel1}}
+\put(-0.31,-0.11){\includegraphics[width=20cm,angle=-70]{loeffel3}}
+\put(-0.06,-0.05){\includegraphics[width=20cm,angle=-90]{loeffel2}}
+\end{picture}
+\end{center}
+
+\end{document}
+
